@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { cafe } from "@/data/cafe";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -9,22 +10,20 @@ export default function Footer() {
                     {/* Brand */}
                     <div>
                         <div className="flex items-center gap-2">
-                            <span
-                                className="
-                  flex h-9 w-9
-                  items-center justify-center
-                  rounded-full
-                  bg-[var(--cream-light)]
-                  text-sm
-                  text-[var(--coffee)]
-                "
-                            >
-                                ☕
-                            </span>
+                            <div className="flex items-center gap-2">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="Tungmo Cafe"
+                                    width={36}
+                                    height={36}
+                                    className="h-9 w-9 rounded-full object-contain"
+                                />
 
-                            <span className="font-serif text-xl">
-                                {cafe.name}
-                            </span>
+                                <span className="font-serif text-xl">
+                                    {cafe.name}
+                                </span>
+                            </div>
+
                         </div>
 
                         <p className="mt-6 max-w-sm font-serif text-3xl leading-tight text-[#f8ecdf] sm:text-4xl">
@@ -68,7 +67,7 @@ export default function Footer() {
                                 href="#blog"
                                 className="text-sm transition-opacity hover:opacity-60"
                             >
-                                Journal
+                                Blog
                             </a>
 
                             <a

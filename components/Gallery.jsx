@@ -174,26 +174,6 @@ export default function Gallery() {
                         "Stay for one more cup."
                     </p>
 
-                    <a
-                        href="#contact"
-                        className="
-              group flex items-center gap-2
-              text-sm font-medium
-              text-[var(--coffee)]
-            "
-                    >
-                        Come visit us
-
-                        <ArrowUpRight
-                            size={16}
-                            className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-                group-hover:-translate-y-1
-              "
-                        />
-                    </a>
                 </div>
             </div>
         </section>

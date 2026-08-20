@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cafe } from "@/data/cafe";
@@ -24,33 +25,33 @@ export default function Navbar() {
             <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-10">
                 <nav
                     className="
-            mx-auto flex max-w-7xl items-center justify-between
-            rounded-full border border-[var(--line)]
-            bg-[rgba(255,250,242,0.88)]
-            px-5 py-3
-            shadow-[0_8px_30px_rgba(90,48,34,0.08)]
-            backdrop-blur-md
-          "
+                        mx-auto flex max-w-7xl items-center justify-between
+                        rounded-full border border-[var(--line)]
+                        bg-[rgba(255,250,242,0.88)]
+                        px-5 py-3
+                        shadow-[0_8px_30px_rgba(90,48,34,0.08)]
+                        backdrop-blur-md
+                    "
                 >
                     {/* Logo */}
                     <a
                         href="#home"
-                        className="flex items-center gap-2"
+                        className="flex items-center"
                         onClick={closeMenu}
                     >
-                        <span
+                        <Image
+                            src="/images/logo.png"
+                            alt={`${cafe.name} logo`}
+                            width={140}
+                            height={45}
+                            priority
                             className="
-                flex h-8 w-8 items-center justify-center
-                rounded-full bg-[var(--coffee)]
-                text-sm text-[var(--cream-light)]
-              "
-                        >
-                            ☕
-                        </span>
-
-                        <span className="font-serif text-lg font-semibold tracking-wide text-[var(--coffee)]">
-                            {cafe.name}
-                        </span>
+                                h-9
+                                w-auto
+                                object-contain
+                                sm:h-10
+                            "
+                        />
                     </a>
 
                     {/* Desktop navigation */}
@@ -60,10 +61,10 @@ export default function Navbar() {
                                 key={item.label}
                                 href={item.href}
                                 className="
-                  text-sm text-[var(--brown-muted)]
-                  transition-colors duration-300
-                  hover:text-[var(--coffee)]
-                "
+                                    text-sm text-[var(--brown-muted)]
+                                    transition-colors duration-300
+                                    hover:text-[var(--coffee)]
+                                "
                             >
                                 {item.label}
                             </a>
@@ -72,13 +73,13 @@ export default function Navbar() {
                         <a
                             href="#contact"
                             className="
-                flex items-center gap-1.5 rounded-full
-                bg-[var(--coffee)] px-4 py-2
-                text-sm text-[var(--cream-light)]
-                transition-all duration-300
-                hover:-translate-y-0.5
-                hover:bg-[var(--coffee-dark)]
-              "
+                                flex items-center gap-1.5 rounded-full
+                                bg-[var(--coffee)] px-4 py-2
+                                text-sm text-[var(--cream-light)]
+                                transition-all duration-300
+                                hover:-translate-y-0.5
+                                hover:bg-[var(--coffee-dark)]
+                            "
                         >
                             Visit us
                             <ArrowUpRight size={15} />
@@ -89,13 +90,14 @@ export default function Navbar() {
                     <button
                         type="button"
                         aria-label={isOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isOpen}
                         onClick={() => setIsOpen(!isOpen)}
                         className="
-              flex h-10 w-10 items-center justify-center
-              rounded-full bg-[var(--coffee)]
-              text-[var(--cream-light)]
-              md:hidden
-            "
+                            flex h-10 w-10 items-center justify-center
+                            rounded-full bg-[var(--coffee)]
+                            text-[var(--cream-light)]
+                            md:hidden
+                        "
                     >
                         {isOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
@@ -105,16 +107,16 @@ export default function Navbar() {
             {/* Mobile menu */}
             <div
                 className={`
-          fixed inset-0 z-40 flex flex-col justify-between
-          bg-[var(--cream-light)]
-          px-7 pb-8 pt-28
-          transition-all duration-500
-          md:hidden
-          ${isOpen
+                    fixed inset-0 z-40 flex flex-col justify-between
+                    bg-[var(--cream-light)]
+                    px-7 pb-8 pt-28
+                    transition-all duration-500
+                    md:hidden
+                    ${isOpen
                         ? "pointer-events-auto opacity-100"
                         : "pointer-events-none opacity-0"
                     }
-        `}
+                `}
             >
                 <div className="flex flex-col">
                     {navItems.map((item, index) => (
@@ -123,15 +125,17 @@ export default function Navbar() {
                             href={item.href}
                             onClick={closeMenu}
                             className="
-                border-b border-[var(--line)]
-                py-5
-                font-serif text-4xl
-                text-[var(--coffee)]
-                transition-transform duration-300
-                hover:translate-x-2
-              "
+                                border-b border-[var(--line)]
+                                py-5
+                                font-serif text-4xl
+                                text-[var(--coffee)]
+                                transition-transform duration-300
+                                hover:translate-x-2
+                            "
                             style={{
-                                transitionDelay: isOpen ? `${index * 50}ms` : "0ms",
+                                transitionDelay: isOpen
+                                    ? `${index * 50}ms`
+                                    : "0ms",
                             }}
                         >
                             {item.label}
@@ -150,7 +154,14 @@ export default function Navbar() {
                         </p>
                     </div>
 
-                    <span className="text-4xl">☕</span>
+                    {/* Mobile logo */}
+                    <Image
+                        src="/images/logo.png"
+                        alt={`${cafe.name} logo`}
+                        width={90}
+                        height={35}
+                        className="h-8 w-auto object-contain"
+                    />
                 </div>
             </div>
         </>

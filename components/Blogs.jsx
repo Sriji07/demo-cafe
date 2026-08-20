@@ -168,19 +168,7 @@ export default function Blog() {
                         description="Coffee, food, people and little moments from our corner of the city."
                     />
 
-                    <a
-                        href="#"
-                        className="
-              hidden
-              items-center gap-2
-              text-sm font-medium
-              text-[var(--coffee)]
-              sm:flex
-            "
-                    >
-                        View all stories
-                        <ArrowUpRight size={16} />
-                    </a>
+
                 </div>
 
                 {/* Featured post */}
@@ -198,21 +186,7 @@ export default function Blog() {
                 </div>
 
                 {/* Mobile all stories link */}
-                <div className="mt-10 sm:hidden">
-                    <a
-                        href="#"
-                        className="
-              flex items-center justify-between
-              border-b border-[var(--line)]
-              pb-3
-              text-sm font-medium
-              text-[var(--coffee)]
-            "
-                    >
-                        View all stories
-                        <ArrowUpRight size={17} />
-                    </a>
-                </div>
+
             </div>
         </section>
     );

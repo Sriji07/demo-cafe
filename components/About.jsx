@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Coffee, Heart, Sparkles } from "lucide-react";
 import SectionHeading from "./SectionHeading";
@@ -27,14 +28,15 @@ export default function About() {
         <section
             id="about"
             className="
-        relative overflow-hidden
-        bg-[var(--cream-light)]
-        px-5 py-20
-        sm:px-8 sm:py-28
-        lg:px-12 lg:py-36
-      "
+                relative overflow-hidden
+                bg-[var(--cream-light)]
+                px-5 py-20
+                sm:px-8 sm:py-28
+                lg:px-12 lg:py-36
+            "
         >
             <div className="mx-auto max-w-7xl">
+
                 {/* Heading */}
                 <SectionHeading
                     eyebrow="Our story"
@@ -52,7 +54,8 @@ export default function About() {
 
                 {/* Main content */}
                 <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-2 lg:items-center lg:gap-20">
-                    {/* Image / visual */}
+
+                    {/* Image */}
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -60,78 +63,59 @@ export default function About() {
                         transition={{ duration: 0.7 }}
                         className="relative mx-auto w-full max-w-lg"
                     >
+
                         {/* Decorative circle */}
                         <div
                             className="
-                absolute
-                -right-4 -top-4
-                h-24 w-24
-                rounded-full
-                border border-[var(--caramel)]/30
-                sm:-right-7 sm:-top-7
-                sm:h-32 sm:w-32
-              "
+                                absolute
+                                -right-4 -top-4
+                                h-24 w-24
+                                rounded-full
+                                border border-[var(--caramel)]/30
+                                sm:-right-7 sm:-top-7
+                                sm:h-32 sm:w-32
+                            "
                         />
 
-                        {/* Main image placeholder */}
+                        {/* Main image */}
                         <div
                             className="
-                relative
-                aspect-[4/5]
-                overflow-hidden
-                rounded-[45%_45%_20%_20%]
-                bg-[var(--coffee)]
-                shadow-[0_25px_60px_rgba(90,48,34,0.15)]
-              "
+                                relative
+                                aspect-[4/5]
+                                overflow-hidden
+                                rounded-[45%_45%_20%_20%]
+                                bg-[var(--coffee)]
+                                shadow-[0_25px_60px_rgba(90,48,34,0.15)]
+                            "
                         >
-                            {/* Temporary visual */}
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,#c58b61_0%,#8a5037_35%,#4c291f_75%)]" />
-
-                            {/* Decorative cup */}
-                            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                                <div className="absolute -top-20 left-1/2 -translate-x-1/2 text-5xl text-white/30">
-                                    ♨
-                                </div>
-
-                                <div className="relative h-28 w-44 rounded-b-[40%] rounded-t-[20%] bg-[#fff3e4] shadow-2xl">
-                                    <div className="absolute left-1/2 top-2 h-7 w-36 -translate-x-1/2 rounded-[50%] bg-[#35170f]" />
-
-                                    <div className="absolute -right-9 top-7 h-14 w-12 rounded-r-full border-[10px] border-l-0 border-[#fff3e4]" />
-                                </div>
-
-                                <div className="absolute -bottom-5 left-1/2 h-5 w-52 -translate-x-1/2 rounded-[50%] bg-[#d09a75]" />
-                            </div>
-
-                            {/* Image label */}
-                            <div
+                            <Image
+                                src="/images/cafe.jpg"
+                                alt="Tungmo Cafe"
+                                fill
+                                priority
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 50vw"
                                 className="
-                  absolute bottom-4 left-4 right-4
-                  rounded-2xl
-                  bg-[rgba(255,250,242,0.9)]
-                  p-4
-                  backdrop-blur-sm
-                "
-                            >
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--brown-muted)]">
-                                    Since 2026
-                                </p>
-
-                                <p className="mt-1 font-serif text-lg text-[var(--coffee)]">
-                                    Brewed slowly.
-                                </p>
-                            </div>
+        object-cover
+        transition-transform
+        duration-700
+        ease-out
+        hover:scale-105
+    "
+                            />
                         </div>
+
+
 
                         {/* Floating note */}
                         <div
                             className="
-                absolute -bottom-5 -left-2
-                rounded-2xl
-                bg-[var(--cream)]
-                px-4 py-3
-                shadow-[0_12px_30px_rgba(90,48,34,0.12)]
-                sm:-left-6
-              "
+                                absolute -bottom-5 -left-2
+                                rounded-2xl
+                                bg-[var(--cream)]
+                                px-4 py-3
+                                shadow-[0_12px_30px_rgba(90,48,34,0.12)]
+                                sm:-left-6
+                            "
                         >
                             <p className="font-serif text-sm italic text-[var(--coffee)]">
                                 Stay a little longer.
@@ -161,43 +145,58 @@ export default function About() {
                         <a
                             href="#menu"
                             className="
-                group mt-7 inline-flex
-                items-center gap-2
-                border-b border-[var(--coffee)]
-                pb-1
-                text-sm font-medium
-                text-[var(--coffee)]
-              "
+                                group mt-7 inline-flex
+                                items-center gap-2
+                                border-b border-[var(--coffee)]
+                                pb-1
+                                text-sm font-medium
+                                text-[var(--coffee)]
+                            "
                         >
                             Discover our menu
 
                             <ArrowUpRight
                                 size={16}
                                 className="
-                  transition-transform duration-300
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
+                                    transition-transform duration-300
+                                    group-hover:translate-x-1
+                                    group-hover:-translate-y-1
+                                "
                             />
                         </a>
 
                         {/* Highlights */}
-                        <div className="mt-12 grid grid-cols-1 gap-6 border-t border-[var(--line)] pt-8 sm:grid-cols-3 lg:grid-cols-1">
+                        <div
+                            className="
+                                mt-12
+                                grid grid-cols-1 gap-6
+                                border-t border-[var(--line)]
+                                pt-8
+                                sm:grid-cols-3
+                                lg:grid-cols-1
+                            "
+                        >
                             {highlights.map((item) => {
                                 const Icon = item.icon;
 
                                 return (
-                                    <div key={item.title} className="flex gap-4">
+                                    <div
+                                        key={item.title}
+                                        className="flex gap-4"
+                                    >
                                         <div
                                             className="
-                        flex h-10 w-10 shrink-0
-                        items-center justify-center
-                        rounded-full
-                        bg-[var(--cream)]
-                        text-[var(--coffee)]
-                      "
+                                                flex h-10 w-10 shrink-0
+                                                items-center justify-center
+                                                rounded-full
+                                                bg-[var(--cream)]
+                                                text-[var(--coffee)]
+                                            "
                                         >
-                                            <Icon size={17} strokeWidth={1.5} />
+                                            <Icon
+                                                size={17}
+                                                strokeWidth={1.5}
+                                            />
                                         </div>
 
                                         <div>

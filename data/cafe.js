@@ -5,11 +5,11 @@ export const cafe = {
     description:
         "A cozy little corner where handcrafted coffee, warm conversations, and beautiful moments come together.",
 
-    location: "Kolkata, India",
+    location: "Howrah, India",
 
     address: {
-        line1: "XYZ Street",
-        line2: "Kolkata, West Bengal 700XXX",
+        line1: "RDB Street",
+        line2: "Howrah, West Bengal 711202",
     },
 
     hours: {
@@ -18,8 +18,8 @@ export const cafe = {
     },
 
     contact: {
-        phone: "+91 987XXXXXXX",
-        email: "hello@tungmo.com",
+        phone: "+91 9870883748",
+        email: "cafetungmo@gmial.com",
     },
 
     social: {

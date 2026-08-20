@@ -259,7 +259,6 @@ export default function Contact() {
                                         id="name"
                                         name="name"
                                         type="text"
-                                        placeholder="Jane Doe"
                                         className="
                       w-full
                       rounded-xl
@@ -287,7 +286,6 @@ export default function Contact() {
                                         id="email"
                                         name="email"
                                         type="email"
-                                        placeholder="hello@example.com"
                                         className="
                       w-full
                       rounded-xl
@@ -315,7 +313,6 @@ export default function Contact() {
                                         id="message"
                                         name="message"
                                         rows="4"
-                                        placeholder="Tell us what's on your mind..."
                                         className="
                       w-full
                       resize-none
